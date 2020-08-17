@@ -7,7 +7,7 @@ namespace TddTrainingDay01 {
                 return -1; // Exit point
             }
 
-            if (a > 1000) {
+            if (a <= 1000) {
                 throw new InvalidOperationException("um, too high!"); // Exit point
             }
 
