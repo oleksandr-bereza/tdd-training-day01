@@ -31,5 +31,16 @@ namespace TddTrainingDay01.Test {
             Should.Throw<InvalidOperationException>(() => sut.Add(SmallestNumberAboveUpperThreshold, 1))
                 .Message.ShouldContain("um, too high!");
         }
+
+        [TestCase(1, 2, 3)]
+        [TestCase(42, 13, 55)]
+        [TestCase(1000, 2000, 3000)]
+        public void Add_WhenGivenPositiveNumbersAndFIrstIsBelowUpperThreshold_ReturnsTheirSum(int a, int b, int expectedValue) {
+            var sut = MakeMyCalc();
+
+            var act = sut.Add(a, b);
+
+            act.ShouldBe(expectedValue);
+        }
     }
 }
