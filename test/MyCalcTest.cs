@@ -4,13 +4,16 @@ using Shouldly;
 namespace TddTrainingDay01.Test {
     [TestFixture]
     public class MyCalcTest {
+
+        private const int DefaultValue = -1;
+
         private static MyCalc MakeMyCalc() {
             return new MyCalc();
         }
 
-        [TestCase(0, 1, -1)]
-        [TestCase(1, 0, -1)]
-        public void Add_WhenParameterIsNonPositive_ReturnsMinusOne(int a, int b, int expectedValue) {
+        [TestCase(0, 1, DefaultValue)]
+        [TestCase(1, 0, DefaultValue)]
+        public void Add_WhenParameterIsNonPositive_ReturnsDefaultValue(int a, int b, int expectedValue) {
             var sut = MakeMyCalc();
 
             var act = sut.Add(a, b);
