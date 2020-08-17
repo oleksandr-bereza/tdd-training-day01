@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using Shouldly;
 
 namespace TddTrainingDay01.Test {
@@ -20,6 +21,14 @@ namespace TddTrainingDay01.Test {
             var act = sut.Add(a, b);
 
             act.ShouldBe(expectedValue);
+        }
+
+        [Test]
+        public void Add_WhenFirstParameterIsAboveThreshold_ThrowsException() {
+            var sut = MakeMyCalc();
+
+            Should.Throw<InvalidOperationException>(() => sut.Add(1001, 1))
+                .Message.ShouldContain("um, too high!");
         }
     }
 }
