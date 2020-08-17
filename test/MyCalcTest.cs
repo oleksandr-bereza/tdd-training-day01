@@ -8,22 +8,14 @@ namespace TddTrainingDay01.Test {
             return new MyCalc();
         }
 
-        [Test]
-        public void Add_WhenFirstParameterIsNonPositive_ReturnsMinusOne() {
+        [TestCase(0, 1, -1)]
+        [TestCase(1, 0, -1)]
+        public void Add_WhenParameterIsNonPositive_ReturnsMinusOne(int a, int b, int expectedValue) {
             var sut = MakeMyCalc();
 
-            var act = sut.Add(0, 1);
+            var act = sut.Add(a, b);
 
-            act.ShouldBe(-1);
-        }
-
-        [Test]
-        public void Add_WhenSecondParameterIsNonPositive_ReturnsMinusOne() {
-            var sut = MakeMyCalc();
-
-            var act = sut.Add(1, 0);
-
-            act.ShouldBe(-1);
+            act.ShouldBe(expectedValue);
         }
     }
 }
