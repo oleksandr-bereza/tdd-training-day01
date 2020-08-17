@@ -11,7 +11,7 @@ namespace TddTrainingDay01 {
                 throw new InvalidOperationException("um, too high!"); // Exit point
             }
 
-            return a + b; // Exit point
+            return a - b; // Exit point
         }
     }
 }
