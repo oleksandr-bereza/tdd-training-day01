@@ -4,9 +4,13 @@ using Shouldly;
 namespace TddTrainingDay01.Test {
     [TestFixture]
     public class MyCalcTest {
+        private static MyCalc MakeMyCalc() {
+            return new MyCalc();
+        }
+
         [Test]
         public void Add_WhenFirstParameterIsNonPositive_ReturnsMinusOne() {
-            var sut = new MyCalc();
+            var sut = MakeMyCalc();
 
             var act = sut.Add(0, 1);
 
@@ -15,7 +19,7 @@ namespace TddTrainingDay01.Test {
 
         [Test]
         public void Add_WhenSecondParameterIsNonPositive_ReturnsMinusOne() {
-            var sut = new MyCalc();
+            var sut = MakeMyCalc();
 
             var act = sut.Add(1, 0);
 
