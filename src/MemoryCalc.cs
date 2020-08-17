@@ -3,12 +3,12 @@
         private int _total;
 
         public int GetTotal() {
-            return _total;
+            return _total; // Exit point
         }
-        public void Add(int x) {
+        public void Add(int x) { // Entry point
             _total += x;
         }
-        public void Reset() {
+        public void Reset() { // Entry point
             _total = 0;
         }
     }
