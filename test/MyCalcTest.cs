@@ -8,6 +8,7 @@ namespace TddTrainingDay01.Test {
 
         private const int DefaultValue = -1;
         private const int LargestNonPositiveNumber = 0;
+        private const int SmallestNumberAboveUpperThreshold = 1001;
 
         private static MyCalc MakeMyCalc() {
             return new MyCalc();
@@ -24,10 +25,10 @@ namespace TddTrainingDay01.Test {
         }
 
         [Test]
-        public void Add_WhenFirstParameterIsAboveThreshold_ThrowsException() {
+        public void Add_WhenFirstParameterIsAboveUpperThreshold_ThrowsException() {
             var sut = MakeMyCalc();
 
-            Should.Throw<InvalidOperationException>(() => sut.Add(1001, 1))
+            Should.Throw<InvalidOperationException>(() => sut.Add(SmallestNumberAboveUpperThreshold, 1))
                 .Message.ShouldContain("um, too high!");
         }
     }
