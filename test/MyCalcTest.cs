@@ -6,13 +6,14 @@ namespace TddTrainingDay01.Test {
     public class MyCalcTest {
 
         private const int DefaultValue = -1;
+        private const int LargestNonPositiveNumber = 0;
 
         private static MyCalc MakeMyCalc() {
             return new MyCalc();
         }
 
-        [TestCase(0, 1, DefaultValue)]
-        [TestCase(1, 0, DefaultValue)]
+        [TestCase(LargestNonPositiveNumber, 1, DefaultValue)]
+        [TestCase(1, LargestNonPositiveNumber, DefaultValue)]
         public void Add_WhenParameterIsNonPositive_ReturnsDefaultValue(int a, int b, int expectedValue) {
             var sut = MakeMyCalc();
 
