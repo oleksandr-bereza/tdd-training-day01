@@ -9,7 +9,7 @@
             _total += x;
         }
         public void Reset() { // Entry point
-            _total = 0;
+            _total = 1;
         }
     }
 }
