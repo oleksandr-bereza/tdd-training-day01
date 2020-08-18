@@ -40,6 +40,18 @@ namespace TddTrainingDay01.Test {
             act.ShouldBe(0);
         }
 
+        [Test]
+        public void GetTotal_WhenAskedExactlyTheUltimateQuestionOfLifeUniverseAndEverything_GivesAnswer() {
+            var deepThought = MakeMemoryCalc();
+            for (int i = 0; i < 6; i++) {
+                deepThought.Add(7);
+            }
+
+            var answer = deepThought.GetTotal();
+
+            answer.ShouldBe(42);
+        }
+
         private static MemoryCalc MakeMemoryCalc() {
             return new MemoryCalc();
         }
