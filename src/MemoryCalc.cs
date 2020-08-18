@@ -6,7 +6,7 @@
             return _total; // Exit point
         }
         public void Add(int x) { // Entry point
-            _total -= x;
+            _total += x;
         }
         public void Reset() { // Entry point
             _total = 0;
