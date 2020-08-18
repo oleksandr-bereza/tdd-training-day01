@@ -1,6 +1,6 @@
 ﻿namespace TddTrainingDay01 {
     public class MemoryCalc {
-        private int _total = 1;
+        private int _total;
 
         public int GetTotal() {
             return _total; // Exit point
